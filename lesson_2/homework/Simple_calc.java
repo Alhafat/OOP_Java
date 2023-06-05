@@ -1,4 +1,4 @@
-package lesson_1.lesson_2.homework;
+package lesson_2.homework;
 
 public class Simple_calc extends Operations {
 
