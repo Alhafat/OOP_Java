@@ -2,6 +2,7 @@ package lesson_1.seminar.exp_1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class exp_1 {
 
@@ -30,7 +31,7 @@ public class exp_1 {
         list.add(Hot_drink_3);
         // Machine temp = new Machine(list);
         // System.out.println(temp.getProduct("apple"));
-        list.sort(new productComparator());
+        list.sort(new productComparator());;
         System.out.println(list.toString());
     }
 }
