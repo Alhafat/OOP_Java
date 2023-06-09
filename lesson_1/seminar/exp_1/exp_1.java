@@ -26,8 +26,11 @@ public class exp_1 {
         list.add(Hot_drink_1);
         Product Hot_drink_2 = new Hot_drink("cofee", 30, 90);
         list.add(Hot_drink_2);
+        Product Hot_drink_3 = new Hot_drink("water", 5, 90);
+        list.add(Hot_drink_3);
         // Machine temp = new Machine(list);
         // System.out.println(temp.getProduct("apple"));
+        list.sort(new productComparator());
         System.out.println(list.toString());
     }
 }

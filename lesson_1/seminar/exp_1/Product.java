@@ -1,6 +1,6 @@
 package lesson_1.seminar.exp_1;
 
-public abstract class Product {
+public abstract class Product implements Comparable<Product> {
 
     /*
      * Реализуйте класс Товар, содержащий данные о товаре, и ТорговыйАвтомат,
@@ -25,7 +25,7 @@ public abstract class Product {
         this.name = name;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
@@ -34,7 +34,13 @@ public abstract class Product {
     }
 
     @Override
+    public int compareTo(Product o) {
+        return Integer.compare(this.price, o.price);
+    }
+
+    @Override
     public String toString() {
         return "Product [name=" + getName() + ", price=" + getPrice() + "]";
     }
+
 }
