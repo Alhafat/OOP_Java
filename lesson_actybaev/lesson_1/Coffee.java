@@ -1,6 +1,6 @@
 package lesson_actybaev.lesson_1;
 
-public class Coffee extends Product{
+public class Coffee extends Product {
 
     /*
     * кофе
