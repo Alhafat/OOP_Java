@@ -9,7 +9,6 @@ public class Product {
     protected double price;
 
     public Product() {
-
     }
 
     public Product(String name, double price) {
