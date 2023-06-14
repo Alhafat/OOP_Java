@@ -5,8 +5,8 @@ public class Product {
     /*
     * общий класс продукт
     * */
-    private String name;
-    private double price;
+    protected String name;
+    protected double price;
 
     public Product() {
 
