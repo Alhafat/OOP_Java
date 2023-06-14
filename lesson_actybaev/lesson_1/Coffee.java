@@ -1,6 +1,10 @@
 package lesson_actybaev.lesson_1;
 
 public class Coffee extends Product{
+
+    /*
+    * кофе
+    * */
     private int temp;
     private boolean milk;
     private double value;

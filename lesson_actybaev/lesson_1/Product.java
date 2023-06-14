@@ -1,6 +1,10 @@
 package lesson_actybaev.lesson_1;
 
 public class Product {
+
+    /*
+    * общий класс продукт
+    * */
     private String name;
     private double price;
 

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class exp_1 {
+    /*
+    * меин
+    * */
     public static void main(String[] args) {
         Product product = new Product();
         List<Product> p = new ArrayList<>();
