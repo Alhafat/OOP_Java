@@ -1,10 +1,7 @@
 package lesson_actybaev.lesson_3.homework;
 
-import lesson_actybaev.lesson_3.lesson.StudentComparatorByAge;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -16,7 +13,7 @@ public class TeacherGroup implements Iterable<Teacher>{
     }
 
     public TeacherGroup() {
-        this(new ArrayList<Teacher>());
+        this(new ArrayList<>());
     }
 
     public List<Teacher> getTeachers() {
@@ -35,7 +32,7 @@ public class TeacherGroup implements Iterable<Teacher>{
     public void addTeacher(Teacher teacher) {teachers.add(teacher);}
 
     public void sort(){
-        Collections.sort(teachers, new TeacherComparator());
+        teachers.sort(new TeacherComparator());
     }
 
 
