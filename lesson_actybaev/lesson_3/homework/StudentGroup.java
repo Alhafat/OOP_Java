@@ -1,15 +1,12 @@
 package lesson_actybaev.lesson_3.homework;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class StudentGroup implements Iterable<Student>{
     private List<Student> students;
     private Teacher teacher;
-
-    public StudentGroup(List<Student> students) {
-        this.students = students;
-        this.teacher = teacher;
-    }
 
     public List<Student> getStudents() {
         return students;
@@ -19,24 +16,24 @@ public class StudentGroup implements Iterable<Student>{
         this.students = students;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
+    public StudentGroup(List<Student> students) {
+        this.students = students;
     }
 
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
-
-    @Override
-    public String toString() {
-        return "StudentGroup{" +
-                "students=" + students +
-                ", teacher=" + teacher +
-                '}';
+    public StudentGroup() {
+        this(new ArrayList<>());
     }
 
     @Override
     public StudentGroupIterator iterator() {
         return new StudentGroupIterator(this);
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public void sort(){
+        students.sort(new StudentComparator());
     }
 }

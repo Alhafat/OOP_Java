@@ -1,36 +1,36 @@
 package lesson_actybaev.lesson_3.homework;
 
 import java.time.LocalDate;
-import java.util.Iterator;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        StudentGroup students = new StudentGroup(List.of(new Student(3, "String firstName",
-                        "String secondName",
-                        "String patronymic", LocalDate.now()), new Student(2, "String firstName2",
-                        "String secondName",
-                        "String patronymic", LocalDate.now()),
-                new Student(1, "a",
-                        "a",
-                        "a", LocalDate.now())));
 
+        StudentGroup students = new StudentGroup();
+        StudyService studyGroupService = new StudyService(students);
 
-        Iterator<Student> studentIterator = students.iterator();
-        while (studentIterator.hasNext()) {
-            System.out.println(studentIterator.next().toString());
+        studyGroupService.addStudent("Петр", "Петров", "Петрович", LocalDate.of(1989, 01, 01));
+        studyGroupService.addStudent("Иван", "Иванов", "Петрович", LocalDate.of(1989, 01, 01));
+        studyGroupService.addStudent("Семен", "Семенов", "Петрович", LocalDate.of(1989, 01, 01));
+        studyGroupService.addStudent("Николай", "Николаве", "Петрович", LocalDate.of(1989, 01, 01));
+        studyGroupService.addStudent("Константин", "Константинов", "Петрович", LocalDate.of(1989, 01, 01));
+
+        for (Student student : students) {
+            System.out.println(student);
         }
-        System.out.println("////////////////////////////////////");
-        List<Student> list = students.getStudents().stream().sorted()
-                .collect(Collectors.toList());
-        System.out.println(list.toString());
+
+        System.out.println();
+
+        students.sort();
+
+        for (Student student : students) {
+            System.out.println(student);
+        }
 
         System.out.println();
 
         TeacherGroup teams = new TeacherGroup();
         TeacherService service = new TeacherService(teams);
-        ;
+
         service.addTeacher("Екатерина", "Тучкина", "Максимовна", LocalDate.of(1989, 01, 01));
         service.addTeacher("Екатерина", "Кучкина", "Максимовна", LocalDate.of(1989, 01, 01));
         service.addTeacher("Екатерина", "Мучкина", "Максимовна", LocalDate.of(1989, 01, 01));

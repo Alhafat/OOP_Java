@@ -1,6 +1,5 @@
 package lesson_actybaev.lesson_3.homework;
 
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

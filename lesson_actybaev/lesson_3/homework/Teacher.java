@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.Comparator;
 
 public class Teacher extends User implements Comparator<Teacher> {
-
     private Integer teacherId;
 
     public Teacher(String firstName, String secondName, String patronymic, LocalDate dateOfBirth, Integer teacherId) {
