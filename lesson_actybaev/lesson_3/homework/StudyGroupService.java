@@ -1,19 +1,36 @@
 package lesson_actybaev.lesson_3.homework;
 
-import lesson_actybaev.lesson_3.lesson.StudyGroup;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.List;;
 
 public class StudyGroupService {
 
+    private StudentGroup group;
 
-    private StudentGroup studentsGroup;
-    private List<StudyGroup> studyGroups = new ArrayList<StudyGroup>();
-    private Teacher teacher;
+    public StudentGroup getGroup() {
+        return group;
+    }
 
-    public StudyGroupService(List<StudyGroup> studyGroups) {
-        this.studyGroups = studyGroups;
+    public void setGroup(StudentGroup group) {
+        this.group = group;
+    }
+
+    public Teacher getTeacher() {
+        return getGroup().getTeacher();
+    }
+
+    public List<Student> getStudents() {
+        return getGroup().getStudents();
+    }
+
+    public StudyGroupService() {
+    }
+
+    public StudyGroupService(StudentGroup group) {
+        this.group = group;
+    }
+
+    public StudentGroup addTeacherStudent(Teacher teacher, List<Student> student) {
+        setGroup(new StudentGroup(teacher, student));
+        return getGroup();
     }
 }

@@ -27,7 +27,7 @@ public class Student extends User implements Comparator<Student> {
     @Override
     public String toString() {
         return "Student{" +
-                ", firstName='" + getFirstName() + '\'' +
+                "firstName='" + getFirstName() + '\'' +
                 ", secondName='" + getSecondName() + '\'' +
                 ", patronymic='" + getPatronymic() + '\'' +
                 ", dateOfBirth=" + getDateOfBirth() +

@@ -8,7 +8,7 @@ public class Teacher extends User implements Comparator<Teacher> {
 
     public Teacher(String firstName, String secondName, String patronymic, LocalDate dateOfBirth, Integer teacherId) {
         super(firstName, secondName, patronymic, dateOfBirth);
-        this.teacherId =teacherId;
+        this.teacherId = teacherId;
     }
 
     public Integer getTeacherId() {

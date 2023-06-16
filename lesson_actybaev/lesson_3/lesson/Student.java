@@ -1,6 +1,5 @@
 package lesson_actybaev.lesson_3.lesson;
 
-import org.jetbrains.annotations.NotNull;
 
 public class Student implements Comparable<Student>{
     private int id;
@@ -35,7 +34,7 @@ public class Student implements Comparable<Student>{
     }
 
     @Override
-    public int compareTo(@NotNull Student o) {
+    public int compareTo(Student o) {
         return getName().compareTo(o.getName());
     }
 
