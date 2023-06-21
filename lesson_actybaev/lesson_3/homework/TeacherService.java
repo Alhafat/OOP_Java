@@ -12,6 +12,6 @@ public class TeacherService {
     }
 
     public void addTeacher(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
-        group.addTeacher(new Teacher(firstName, secondName, patronymic, dateOfBirth,++id));
+        group.addUser(new Teacher(firstName, secondName, patronymic, dateOfBirth,++id));
     }
 }

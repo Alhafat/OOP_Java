@@ -1,10 +1,11 @@
 package lesson_actybaev.lesson_3.homework;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-public class TeacherGroup implements Iterable<Teacher>{
+public class TeacherGroup extends UserGroup<Teacher> implements Iterable<Teacher>{
     private List<Teacher> teachers;
 
     public TeacherGroup(List<Teacher> teachers) {
@@ -15,23 +16,28 @@ public class TeacherGroup implements Iterable<Teacher>{
         this(new ArrayList<>());
     }
 
-    public List<Teacher> getTeachers() {
+    public List<Teacher> getUserGroup() {
         return teachers;
     }
 
-    public void setTeachers(List<Teacher> teachers) {
+    public void setUserGroup(List<Teacher> teachers) {
         this.teachers = teachers;
     }
 
     @Override
     public Iterator<Teacher> iterator() {
-        return new TeacherIterator(teachers);
+        return new UserGroupIterator<>(this);
     }
 
-    public void addTeacher(Teacher teacher) {teachers.add(teacher);}
+    public void addUser(Teacher teacher) {getUserGroup().add(teacher);}
 
-    public void sort(){
-        teachers.sort(new TeacherComparator());
+    @Override
+    public void sortUsers(Comparator<Teacher> userComparator) {
+        getUserGroup().sort(userComparator);
+    }
+
+    public void sortUsers(){
+        sortUsers(new UserComparator());
     }
 
 

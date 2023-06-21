@@ -3,7 +3,7 @@ package lesson_actybaev.lesson_3.homework;
 import java.time.LocalDate;
 import java.util.Comparator;
 
-public class Student extends User implements Comparator<Student> {
+public class Student extends User implements Comparator<Student>, UserInterface {
     private Integer studentId;
 
     public Student(String firstName, String secondName, String patronymic, LocalDate dateOfBirth, Integer studentid) {
@@ -11,11 +11,11 @@ public class Student extends User implements Comparator<Student> {
         this.studentId = studentid;
     }
 
-    public Integer getStudentId() {
+    public Integer getId() {
         return studentId;
     }
 
-    public void setStudentId(Integer studentId) {
+    public void setId(Integer studentId) {
         this.studentId = studentId;
     }
 
@@ -31,8 +31,35 @@ public class Student extends User implements Comparator<Student> {
                 ", secondName='" + getSecondName() + '\'' +
                 ", patronymic='" + getPatronymic() + '\'' +
                 ", dateOfBirth=" + getDateOfBirth() +
-                ", studentId=" + getStudentId() +
+                ", studentId=" + getId() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof User)) {
+            return false;
+        }
+
+        User user = (User) o;
+
+        if (getFirstName() != null ? !getFirstName().equals(user.getFirstName()) :
+                user.getFirstName() != null) {
+            return false;
+        }
+        if (getSecondName() != null ? !getSecondName().equals(user.getSecondName()) :
+                user.getSecondName() != null) {
+            return false;
+        }
+        if (getPatronymic() != null ? !getPatronymic().equals(user.getPatronymic()) :
+                user.getPatronymic() != null) {
+            return false;
+        }
+        return getDateOfBirth() != null ? getDateOfBirth().equals(user.getDateOfBirth()) :
+                user.getDateOfBirth() == null;
     }
 
 }

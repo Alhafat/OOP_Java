@@ -3,7 +3,7 @@ package lesson_actybaev.lesson_3.homework;
 import java.time.LocalDate;
 import java.util.Comparator;
 
-public class Teacher extends User implements Comparator<Teacher> {
+public class Teacher extends User implements Comparator<Teacher>, UserInterface{
     private Integer teacherId;
 
     public Teacher(String firstName, String secondName, String patronymic, LocalDate dateOfBirth, Integer teacherId) {
@@ -11,11 +11,11 @@ public class Teacher extends User implements Comparator<Teacher> {
         this.teacherId = teacherId;
     }
 
-    public Integer getTeacherId() {
+    public Integer getId() {
         return teacherId;
     }
 
-    public void setTeacherId(Integer teacherId) {
+    public void setId(Integer teacherId) {
         this.teacherId = teacherId;
     }
 
@@ -31,7 +31,35 @@ public class Teacher extends User implements Comparator<Teacher> {
                 " secondName= " + getSecondName() +
                 " patronymic= " + getPatronymic() +
                 " dateOfBirth= " + getDateOfBirth() +
-                " teacherId= " + getTeacherId() +
+                " teacherId= " + getId() +
                 '}';
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof User)) {
+            return false;
+        }
+
+        User user = (User) o;
+
+        if (getFirstName() != null ? !getFirstName().equals(user.getFirstName()) :
+                user.getFirstName() != null) {
+            return false;
+        }
+        if (getSecondName() != null ? !getSecondName().equals(user.getSecondName()) :
+                user.getSecondName() != null) {
+            return false;
+        }
+        if (getPatronymic() != null ? !getPatronymic().equals(user.getPatronymic()) :
+                user.getPatronymic() != null) {
+            return false;
+        }
+        return getDateOfBirth() != null ? getDateOfBirth().equals(user.getDateOfBirth()) :
+                user.getDateOfBirth() == null;
     }
 }

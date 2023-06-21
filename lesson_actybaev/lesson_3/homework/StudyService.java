@@ -11,6 +11,6 @@ public class StudyService {
     }
 
     public void addStudent(String firstName, String secondName, String patronymic, LocalDate dateOfBirth) {
-        group.addStudent(new Student(firstName, secondName, patronymic, dateOfBirth, ++id));
+        group.addUser(new Student(firstName, secondName, patronymic, dateOfBirth, ++id));
     }
 }

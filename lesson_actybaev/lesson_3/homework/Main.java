@@ -1,85 +1,57 @@
 package lesson_actybaev.lesson_3.homework;
 
-import java.util.List;
-
 import java.time.LocalDate;
-import java.util.Arrays;
 
 public class Main {
+
+    /*
+    Взять реализованный код в рамках семинара 4 и продемонстрировать применение принципов, усвоенных на семинаре.
+    Нужно в проекте прокомментировать участки кода, которые рефакторим, какой принцип применяем и почему.
+    Формат сдачи: ссылка на гитхаб проект
+     */
     public static void main(String[] args) {
 
-        // StudentGroup students = new StudentGroup();
-        // StudyService studyGroupService = new StudyService(students);
+        StudentGroup students = new StudentGroup();
+        StudyService studyGroupService = new StudyService(students);
 
-        // studyGroupService.addStudent("Петр", "Петров", "Петрович", LocalDate.of(1989,
-        // 01, 01));
-        // studyGroupService.addStudent("Иван", "Иванов", "Петрович", LocalDate.of(1989,
-        // 01, 01));
-        // studyGroupService.addStudent("Семен", "Семенов", "Петрович",
-        // LocalDate.of(1989, 01, 01));
-        // studyGroupService.addStudent("Николай", "Николаве", "Петрович",
-        // LocalDate.of(1989, 01, 01));
-        // studyGroupService.addStudent("Константин", "Константинов", "Петрович",
-        // LocalDate.of(1989, 01, 01));
+        studyGroupService.addStudent("Петр", "Петров", "Петрович", LocalDate.of(1989, 01, 01));
+        studyGroupService.addStudent("Иван", "Иванов", "Петрович", LocalDate.of(1989, 01, 01));
+        studyGroupService.addStudent("Семен", "Семенов", "Петрович", LocalDate.of(1989, 01, 01));
+        studyGroupService.addStudent("Николай", "Николаве", "Петрович", LocalDate.of(1989, 01, 01));
+        studyGroupService.addStudent("Константин", "4Константинов", "Петрович", LocalDate.of(1989, 01, 01));
 
-        List<Student> list = Arrays.asList(new Student("Петр", "Петров", "Петрович", LocalDate.of(1989, 01, 01), 1),
-                new Student("Иван", "Иванов", "Петрович", LocalDate.of(1989, 01, 01), 2),
-                new Student("Иван", "Иванов", "Петрович", LocalDate.of(1989, 01, 01), 3),
-                new Student("Иван", "Иванов", "Петрович", LocalDate.of(1989, 01, 01), 4),
-                new Student("Иван", "Иванов", "Петрович", LocalDate.of(1989, 01, 01), 5));
-
-        Teacher teacher = new Teacher("Екатерина", "Мучкина", "Максимовна", LocalDate.of(1989, 01, 01), 1);
-
-        StudyGroupContr controller = new StudyGroupContr();
-
-        System.out.println();
-
-        System.out.println(controller.addTeacherStudent(teacher, list));
-
-        System.out.println();
-
-        for (Student student : list) {
-            System.out.printf("Студент %s имеет id %d\n", student.getSecondName(), student.getStudentId());
+        for (Student student : students) {
+            System.out.println(student);
         }
 
         System.out.println();
 
-        System.out.printf("Учитель %s имеет id %d\n", teacher.getSecondName(), teacher.getTeacherId());
+        students.sortUsers();
 
-        // for (Student student : students) {
-        // System.out.println(student);
-        // }
+        for (Student student : students) {
+            System.out.println(student);
+        }
 
-        // System.out.println();
+        System.out.println();
 
-        // students.sort();
+        TeacherGroup teams = new TeacherGroup();
+        TeacherService service = new TeacherService(teams);
 
-        // for (Student student : students) {
-        // System.out.println(student);
-        // }
+        service.addTeacher("Екатерина", "Тучкина", "Максимовна", LocalDate.of(1989, 01, 01));
+        service.addTeacher("Екатерина", "Кучкина", "Максимовна", LocalDate.of(1989, 01, 01));
+        service.addTeacher("Екатерина", "Мучкина", "Максимовна", LocalDate.of(1989, 01, 01));
 
-        // System.out.println();
 
-        // TeacherGroup teams = new TeacherGroup();
-        // TeacherService service = new TeacherService(teams);
+        for (Teacher teacher : teams) {
+            System.out.println(teacher);
+        }
 
-        // service.addTeacher("Екатерина", "Тучкина", "Максимовна", LocalDate.of(1989,
-        // 01, 01));
-        // service.addTeacher("Екатерина", "Кучкина", "Максимовна", LocalDate.of(1989,
-        // 01, 01));
-        // service.addTeacher("Екатерина", "Мучкина", "Максимовна", LocalDate.of(1989,
-        // 01, 01));
+        System.out.println();
 
-        // for (Teacher teacher : teams) {
-        // System.out.println(teacher);
-        // }
+        students.sortUsers();
 
-        // System.out.println();
-
-        // teams.sort();
-
-        // for (Teacher teacher : teams) {
-        // System.out.println(teacher);
-        // }
+        for (Teacher teacher : teams) {
+            System.out.println(teacher);
+        }
     }
 }
