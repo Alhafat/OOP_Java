@@ -1,6 +1,5 @@
 package lesson_actybaev.lesson_3.homework;
 
-import org.apache.xmlbeans.impl.xb.xsdschema.Attribute;
 
 import java.util.Iterator;
 import java.util.List;

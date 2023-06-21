@@ -1,8 +1,10 @@
 package lesson_actybaev.lesson_3.homework;
 
+import lesson_actybaev.lesson_3.lesson.StudyGroup;
+
 import java.util.List;
 
-public class StudyGroupContr {
+public class StudyGroupContr extends StudentGroup {
 
     private StudyGroupService service;
 
@@ -18,11 +20,11 @@ public class StudyGroupContr {
         return getService().getTeacher();
     }
 
-    public List<Student> getStudents() {
-        return getService().getStudents();
+    public List<StudyGroup> getStudents() {
+        return getService().getStudyGroups();
     }
 
-    public StudentGroup addTeacherStudent(Teacher teacher, List<Student> student) {
-        return getService().addTeacherStudent(teacher, student);
-    }
+//    public StudentGroup addTeacherStudent(Teacher teacher, List<Student> student) {
+//        return getService().addUser(teacher, student);
+//    }
 }
